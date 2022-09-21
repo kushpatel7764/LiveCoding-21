@@ -23,8 +23,36 @@ public class SinglyLinkedList {
 
         Node current = head;
         while (current != null){
+            System.out.println(current.data + " -> ");
+            current = current.next;
+        }
 
+        System.out.println("end");
+    }
+
+    public void addFirst(String data){
+        if(size == 0){
+            Node newNode = new Node(data, null);
+            head = newNode;
+            tail = newNode;
+            ++size;
+        } else {
+            Node newNode = new Node(data, head);
+            head = newNode;
+            ++size;
         }
     }
 
+    public void addLast (String data){
+        if(size == 0 ){
+            Node newNode = new Node(data, null);
+            head = newNode;
+            tail = newNode;
+            ++size;
+        }else{
+            Node newNode = new Node(data, null);
+            tail.next = newNode;
+            ++size;
+        }
+    }
 }
